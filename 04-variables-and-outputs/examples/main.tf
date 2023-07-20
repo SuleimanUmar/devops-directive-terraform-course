@@ -1,8 +1,8 @@
 terraform {
   backend "s3" {
-    bucket         = "devops-directive-tf-state"
+    bucket         = "my-terraform-state-bucket-001"
     key            = "04-variables-and-outputs/examples/terraform.tfstate"
-    region         = "us-east-1"
+    region         = "eu-central-1"
     dynamodb_table = "terraform-state-locking"
     encrypt        = true
   }
@@ -16,7 +16,7 @@ terraform {
 }
 
 provider "aws" {
-  region = "us-east-1"
+  region = "eu-central-1"
 }
 
 locals {
